@@ -43,7 +43,7 @@ function LED1_Off(){
 	
     client.subscribe("skillet776@yahoo.com/test");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "skillet776@yaoo.com/test1";
+    message.destinationName = "skillet776@yahoo.com/test1";
     client.send(message);
 	
   }
@@ -63,5 +63,6 @@ function LED1_Off(){
   // called when a message arrives
   function onMessageArrived(message) {
     console.log("onMessageArrived:"+message.payloadString);
+	  doAction(message.payloadString);
   }
   
